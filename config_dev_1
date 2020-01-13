@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    active: 
+    - dev
+---
+server:
+  port: 7001
+spring:
+  profiles: dev  
+  application:
+    name: client-server
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-register: false
+    service-url: 
+      defaultZone: http://localhost:8761/eureka/
+---
+server:
+  port: 7001
+spring:
+  profiles: test  
+  application:
+    name: client-server
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-register: false
+    service-url: 
+      defaultZone: http://localhost:8761/eureka/
+#必须保存为UTF-8格式
